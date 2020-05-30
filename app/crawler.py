@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 
 
-def crawler(t):
+def infocrawler(t):
     # t为所需的数目
     result = []
     page = requests.get('https://www.solidot.org/')
@@ -25,4 +25,4 @@ def crawler(t):
     return result[0:t]
 
 # Test Code
-# print(crawler(5))
+# print(infocrawler(5))
