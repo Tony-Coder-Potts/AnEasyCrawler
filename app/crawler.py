@@ -12,12 +12,17 @@ def crawler(t):
     page = page.text
     soup = BeautifulSoup(page, 'html.parser')
     for x in soup.find_all(class_='block_m'):
+        n = x.find(class_='p_mainnew')
+        n = n.get_text()
+        n = n.strip()
         y = x.find('h2')
         z = y.find_all('a')
         if len(z) == 1:
-            result.append(z[0].string)
+            name = z[0].string
         else:
-            result.append(z[0].string + ':' + z[1].string)
+            name = z[0].string + ':' + z[1].string
+        result.append({'topic': name, 'content': n})
     return result[0:t]
 
-print(crawler(5))
+# Test Code
+# print(crawler(5))
