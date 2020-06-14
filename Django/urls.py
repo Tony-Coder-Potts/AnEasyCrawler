@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('hello/', appview.helloworld),
     path('content/',appview.crawler),
+    path('database/',appview.database),
 ]
